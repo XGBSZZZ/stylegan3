@@ -1,0 +1,75 @@
+# Prerequisites
+*.d
+*.rar
+ikun_project
+*.png
+*.bmp
+*.jpg
+*.engine
+*.db
+*.log
+*.cs
+*.pyc
+*.pyd
+*.yaml
+*.wts
+*.ini
+*.exp
+*.xlsx
+*.pdf
+*.MF
+*.qrc
+*.rc
+*.zip
+*.config
+*.ico
+*.cache
+*.pptx
+*.docx
+*.pdb
+*.xml
+*.xaml
+*.svg
+*.pt
+
+logs/
+液态镜头/
+Properties/
+.vs/
+obj/
+.idea/
+translations/
+bin/
+ZK_USB_SPLICE_SDK V1.3.0/
+build/
+packages
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app

@@ -1,0 +1,7 @@
+python dataset_tool.py --source=zzz1024 --dest=zzz1024_2.zip
+官方默认用dataset.json作为分类的标签,如果要用文件名作为标签得改源码
+
+python train.py --outdir=training-runs --cfg=stylegan3-t --data=zzz.zip --gpus=1 --batch=12 --gamma=10 --mirror=1 --kimg=1000 --tick=1 --snap=10 --workers=1 --batch-gpu=12 --metrics=none
+
+batch 不能小于4,启动失败多半是参数给错了
+https://blog.csdn.net/qq_33642342/article/details/121849786

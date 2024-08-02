@@ -69,16 +69,19 @@ def is_image_ext(fname: Union[str, Path]) -> bool:
 def open_image_folder(source_dir, *, max_images: Optional[int]):
     input_images = [str(f) for f in sorted(Path(source_dir).rglob('*')) if is_image_ext(f) and os.path.isfile(f)]
 
-    # Load labels.
-    labels = {}
-    meta_fname = os.path.join(source_dir, 'dataset.json')
-    if os.path.isfile(meta_fname):
-        with open(meta_fname, 'r') as file:
-            labels = json.load(file)['labels']
-            if labels is not None:
-                labels = { x[0]: x[1] for x in labels }
-            else:
-                labels = {}
+    # # Load labels.
+    # labels = {}
+    # meta_fname = os.path.join(source_dir, 'dataset.json')
+    # if os.path.isfile(meta_fname):
+    #     with open(meta_fname, 'r') as file:
+    #         labels = json.load(file)['labels']
+    #         if labels is not None:
+    #             labels = { x[0]: x[1] for x in labels }
+    #         else:
+    #             labels = {}
+
+    # ikundelete
+    labels = { os.path.basename(os.path.dirname(os.path.abspath(img_path))) + "/" + os.path.basename(img_path) : int(os.path.basename(os.path.dirname(os.path.abspath(img_path)))) for img_path in input_images}
 
     max_idx = maybe_min(len(input_images), max_images)
 
