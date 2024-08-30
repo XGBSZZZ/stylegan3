@@ -3,5 +3,13 @@ python dataset_tool.py --source=zzz1024 --dest=zzz1024_2.zip
 
 python train.py --outdir=training-runs --cfg=stylegan3-t --data=zzz.zip --gpus=1 --batch=12 --gamma=10 --mirror=1 --kimg=5000 --tick=1 --snap=10 --workers=1 --batch-gpu=12 --metrics=none
 
+python train.py --outdir=training-runs --cfg=stylegan3-t --data=zzz.zip --gpus=1 --batch=12 --gamma=10 --mirror=1 --kimg=5000 --tick=1 --snap=10 --workers=1 --batch-gpu=12 --metrics=none --resume="Z:\stylegan3\training-runs\00006-stylegan3-t-zzz-gpus1-batch12-gamma10\network-snapshot-000151.pkl"
+
+python train.py --outdir=training-runs --cfg=stylegan3-t --data=zzz.zip --gpus=1 --batch=12 --gamma=10 --mirror=1 --kimg=25000 --tick=1 --snap=50 --workers=1 --batch-gpu=12 --metrics=none --resume="Z:\stylegan3\training-runs\00009-stylegan3-t-zzz-gpus1-batch12-gamma10\network-snapshot-000352.pkl" --cbase=16384
+
+python gen_images.py --outdir=out --trunc=1 --seeds=2 --network=Z:\stylegan3\training-runs\00016-stylegan3-t-zzz-gpus1-batch4-gamma10\network-snapshot-000200.pkl
+
+python gen_video.py --output=lerp.mp4 --trunc=1 --seeds=0-31 --grid=4x2 --network=Z:\stylegan3\training-runs\00016-stylegan3-t-zzz-gpus1-batch4-gamma10\network-snapshot-000200.pkl
+
 batch 不能小于4而且要为4的整数倍,启动失败多半是参数给错了
 https://blog.csdn.net/qq_33642342/article/details/121849786
